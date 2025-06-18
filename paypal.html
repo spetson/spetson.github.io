@@ -6,70 +6,89 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apoie com US$1</title>
+  <title>Apoiar com US$1</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 50px 20px;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
     }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
     h1 {
-      font-size: 26px;
+      font-size: 28px;
+      color: #222;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 18px;
+      color: #444;
       margin-bottom: 30px;
     }
+
     form {
-      display: inline-block;
+      width: 100%;
+      max-width: 320px;
     }
+
     button {
+      width: 100%;
+      padding: 20px;
+      font-size: 20px;
       background-color: #0070ba;
       color: white;
       border: none;
-      padding: 18px 40px;
-      font-size: 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s;
-      width: 100%;
-      max-width: 300px;
+      transition: background-color 0.3s ease;
     }
+
     button:hover {
       background-color: #005c9e;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 22px;
+        font-size: 24px;
       }
+
       p {
         font-size: 16px;
       }
+
       button {
         font-size: 22px;
-        padding: 20px 50px;
-        max-width: 100%;
+        padding: 22px;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>💙 Apoie este projeto</h1>
-  <p>Clique abaixo para contribuir com <strong>US$1</strong> via PayPal.</p>
+  <div class="container">
+    <h1>💙 Apoie este projeto</h1>
+    <p>Clique abaixo para contribuir com <strong>US$1</strong> via PayPal.</p>
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="Q62XC7XNJYE26">
-    <input type="hidden" name="item_name" value="Apoio ao projeto Spetson">
-    <input type="hidden" name="amount" value="1.00">
-    <input type="hidden" name="currency_code" value="USD">
-    <button type="submit">Apoiar com US$1</button>
-  </form>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="Q62XC7XNJYE26">
+      <input type="hidden" name="item_name" value="Apoio ao projeto Spetson">
+      <input type="hidden" name="amount" value="1.00">
+      <input type="hidden" name="currency_code" value="USD">
+      <button type="submit">Apoiar com US$1 💰</button>
+    </form>
+  </div>
 
 </body>
 </html>
