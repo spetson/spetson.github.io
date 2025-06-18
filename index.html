@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Mint | Redirecionamento Automático</title>
+  <title>Redirecionando...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-    // Função para redirecionar com base no país
-    async function redirecionarPorLocalizacao() {
-      try {
-        const resposta = await fetch('https://ipinfo.io/json?token=16e7a9801350a7');
-        const dados = await resposa.json();
-        const pais = dados.country;
+    fetch('https://api.country.is')
+      .then(res => res.json())
+      .then(data => {
+        const pais = data.country;
 
         if (pais === 'BR') {
           window.location.href = 'https://tipa.ai/20matar';
         } else if (pais === 'JP') {
-          window.location.href = 'https://tipa.ai/20matar';
+          window.location.href = 'https://tipa.ai/euder';
         } else {
           window.location.href = 'global.html';
         }
-      } catch (erro) {
-        console.error('Erro ao detectar localização:', erro);
-        // Redireciona para global se falhar
+      })
+      .catch(() => {
         window.location.href = 'global.html';
-      }
-    }
-
-    // Chamada da função ao carregar a página
-    window.onload = redirecionarPorLocalizacao;
+      });
   </script>
 </head>
 <body>
-  <p>Redirecionando, aguarde...</p>
+  <h1>🔄 Redirecionando pela localização...</h1>
 </body>
 </html>
