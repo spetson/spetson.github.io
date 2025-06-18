@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mint | Redirecionamento Automático</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Função para redirecionar com base no país
+    async function redirecionarPorLocalizacao() {
+      try {
+        const resposta = await fetch('https://ipinfo.io/json?token=16e7a9801350a7');
+        const dados = await resposa.json();
+        const pais = dados.country;
+
+        if (pais === 'BR') {
+          window.location.href = 'https://tipa.ai/20matar';
+        } else if (pais === 'JP') {
+          window.location.href = 'https://tipa.ai/20matar';
+        } else {
+          window.location.href = 'global.html';
+        }
+      } catch (erro) {
+        console.error('Erro ao detectar localização:', erro);
+        // Redireciona para global se falhar
+        window.location.href = 'global.html';
+      }
+    }
+
+    // Chamada da função ao carregar a página
+    window.onload = redirecionarPorLocalizacao;
+  </script>
+</head>
+<body>
+  <p>Redirecionando, aguarde...</p>
+</body>
+</html>
