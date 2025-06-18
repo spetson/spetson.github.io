@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Doação via PayPal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005c9e;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>Apoie este projeto 💙</h1>
+  <p>Contribua com US$1 e ajude a manter no ar!</p>
+
+  <form action="https://www.paypal.com/donate" method="post" target="_blank">
+    <input type="hidden" name="hosted_button_id" value="">
+    <input type="hidden" name="business" value="Q62XC7XNJYE26">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="amount" value="1.00">
+    <button type="submit">Doar US$1</button>
+  </form>
+
+</body>
+</html>
