@@ -4,21 +4,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  unzip:
+  unzip_job:
     runs-on: ubuntu-latest
     steps:
       - name: Acessar o repositório
         uses: actions/checkout@v3
 
-      - name: Descompactar o arquivo ZIP
+      - name: Instalar unzip (caso não tenha)
+        run: sudo apt-get install unzip
+
+      - name: Descompactar o ZIP
         run: |
           unzip 20matar.zip -d arquivos
-          rm 20matar.zip
 
-      - name: Salvar os arquivos no repositório
+      - name: Commit dos arquivos descompactados
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add arquivos/
           git commit -m "Arquivos descompactados automaticamente"
           git push
