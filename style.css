@@ -346,6 +346,8 @@ a img.aligncenter {
 .main-banner{
 	height: 100%;
 	position: relative;
+	background: url('uploads/banner-01.jpg') no-repeat center center;
+        background-size: cover;
 }
 
 .main-banner{
@@ -363,6 +365,28 @@ a img.aligncenter {
     background-color: #000;
     z-index: 0;
     opacity: .6;
+}
+@media (max-width: 768px) {
+  .main-banner {
+    min-height: 300px; /* ou ajuste conforme preferir */
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-banner .heading h1 {
+    font-size: 32px;
+  }
+
+  .main-banner .heading p {
+    font-size: 16px;
+  }
+
+  .cd-headline.clip span {
+    font-size: 20px;
+  }
 }
 .heading{
 	color: #fff;
