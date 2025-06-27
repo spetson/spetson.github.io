@@ -6,21 +6,22 @@ on:
 jobs:
   unzip_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Acessar o repositório
         uses: actions/checkout@v3
 
-      - name: Instalar unzip (caso não tenha)
-        run: sudo apt-get install unzip
+      - name: Instalar unzip
+        run: sudo apt-get update && sudo apt-get install -y unzip
 
-      - name: Descompactar o ZIP
-        run: |
-          unzip 20matar.zip -d arquivos
+      - name: Descompactar ZIP
+        run: unzip 20matar.zip -d arquivos
 
-      - name: Commit dos arquivos descompactados
+      - name: Salvar arquivos no repositório
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add arquivos/
-          git commit -m "Arquivos descompactados automaticamente"
+          git commit -m "Arquivos extraídos automaticamente"
           git push
