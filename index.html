@@ -419,69 +419,33 @@ INSTAGRAM PESSOAL <a href="https://instagram.com/spetsonjp" target="_blank">@spe
 		<div class="container">
 			<div class="section-title text-left">
                 <h3>Blog</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
+                <p>Minhas últimas postagens no Medium</p>
             </div><!-- end title -->
 			
 			<div class="row">
-				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
-						<div class="post-thumb">
-							<img src="uploads/blog-01.jpg" class="img-fluid" alt="post-img" />
-							<div class="date">
-								<span>06</span>
-								<span>Aug</span>
-							</div>
-						</div>
-						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
-							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
-                            </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
-						<div class="post-thumb">
-							<img src="uploads/blog-02.jpg" class="img-fluid" alt="post-img" />
-							<div class="date">
-								<span>06</span>
-								<span>Aug</span>
-							</div>
-						</div>
-						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
-							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
-                            </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
-						<div class="post-thumb">
-							<img src="uploads/blog-03.jpg" class="img-fluid" alt="post-img" />
-							<div class="date">
-								<span>06</span>
-								<span>Aug</span>
-							</div>
-						</div>
-						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
-							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
-                            </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
-						</div>
-					</div>
+				<div id="medium-posts" class="col-md-4 col-sm-6 col-lg-4"></div>
+<script>
+  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@spetson")
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById("medium-posts");
+      data.items.slice(0, 5).forEach(post => {
+        const div = document.createElement("div");
+        div.style = "margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px;";
+        div.innerHTML = `
+          <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
+          <p><em>${new Date(post.pubDate).toLocaleDateString()}</em></p>
+          <p>${post.description.replace(/<[^>]+>/g, '').substring(0, 200)}...</p>
+          <a href="${post.link}" target="_blank">Leia no Medium →</a>
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao carregar feed do Medium:", error);
+      document.getElementById("medium-posts").innerText = "Erro ao carregar posts do Medium.";
+    });
+</script>
 				</div>
 			</div>
 			
