@@ -433,16 +433,21 @@ INSTAGRAM PESSOAL <a href="https://instagram.com/spetsonjp" target="_blank">@spe
     .then(data => {
       const container = document.getElementById("medium-posts");
       data.items.slice(0, 5).forEach(post => {
-        // Tentar extrair imagem da descrição
-        const imgMatch = post.description.match(/<img[^>]+src="([^">]+)"/);
-        const imageUrl = imgMatch ? imgMatch[1] : null;
+        // usar DOMParser para pegar imagem com segurança
+        let imageUrl = null;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.description, 'text/html');
+        const imgTag = doc.querySelector('img');
+        if (imgTag) {
+          imageUrl = imgTag.src;
+        }
 
         const div = document.createElement("div");
         div.style = "margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px;";
         div.innerHTML = `
           <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
           <p><em>${new Date(post.pubDate).toLocaleDateString()}</em></p>
-          ${imageUrl ? `<img src="${imageUrl}" alt="Imagem do post" style="max-width:100%;height:auto;">` : ''}
+          ${imageUrl ? `<img src="${imageUrl}" alt="Imagem do post" style="max-width:100%;height:auto;display:block;">` : ""}
           <p>${post.description.replace(/<[^>]+>/g, '').substring(0, 200)}...</p>
           <a href="${post.link}" target="_blank">Leia no Medium →</a>
         `;
@@ -454,6 +459,7 @@ INSTAGRAM PESSOAL <a href="https://instagram.com/spetsonjp" target="_blank">@spe
       document.getElementById("medium-posts").innerText = "Erro ao carregar posts do Medium.";
     });
 </script>
+
 
 				</div>
 			</div>
