@@ -349,8 +349,7 @@ a img.aligncenter {
 }
 
 @media only screen and (max-width: 768px) {
- {
-    p.mob-hide{
+  p.mob-hide {
     display: none;
   }
 }
