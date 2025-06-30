@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Inclusão</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    #header, #main, #footer { padding: 20px; border-bottom: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <div id="main"></div>
+  <div id="footer"></div>
+
+  <script>
+    async function carregar(parte, arquivo) {
+      try {
+        const resposta = await fetch(arquivo);
+        const conteudo = await resposta.text();
+        document.getElementById(parte).innerHTML = conteudo;
+      } catch (erro) {
+        document.getElementById(parte).innerHTML = "<p>Erro ao carregar: " + arquivo + "</p>";
+      }
+    }
+
+    carregar('header', 'a.html');
+    carregar('main', 'b.html');
+    carregar('footer', 'c.html');
+  </script>
+</body>
+</html>
