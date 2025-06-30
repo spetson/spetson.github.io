@@ -5,24 +5,9 @@
     display: none !important;
   }
   .main-banner {
-    height: auto !important;
-    min-height: unset !important;
-    padding-top: 120px !important; /* espaço pro menu fixo */
-    padding-bottom: 60px !important;
-    display: block !important;
+    height: 200px !important;
+    min-height: 200px !important;
   }
 
-  .main-banner .heading {
-    display: block !important;
-    text-align: center;
-  }
-
-  .main-banner h1 {
-    font-size: 28px !important;
-    margin-bottom: 10px;
-  }
-
-  .main-banner h3 {
-    font-size: 18px !important;
-  }
+ 
 }
