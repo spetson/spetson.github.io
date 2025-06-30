@@ -347,12 +347,6 @@ a img.aligncenter {
 	height: 100%;
 	position: relative;
 }
-
-@media only screen and (max-width: 768px) {
-  p.mob-hide {
-    display: none !important;
-  }
-}
 .main-banner{
 	display: table;
     width: 100%;
