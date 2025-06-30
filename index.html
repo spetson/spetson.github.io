@@ -547,19 +547,25 @@ INSTAGRAM PESSOAL <a href="https://instagram.com/spetsonjp" target="_blank">@spe
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
     <script src="js/jquery.vide.js"></script>
+
+
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 768) {
-      var banner = document.querySelector(".main-banner");
-      if (banner) {
-        banner.style.height = "auto";
-        banner.style.minHeight = "300px";
-        banner.style.paddingTop = "100px";
-        banner.style.paddingBottom = "40px";
-        banner.style.display = "block";
+      const banner = document.querySelector('.main-banner');
+      if (banner && banner.classList.contains('parallaxie')) {
+        banner.classList.remove('parallaxie');
+        banner.style.height = 'auto';
+        banner.style.minHeight = '350px';
+        banner.style.paddingTop = '100px';
+        banner.style.paddingBottom = '40px';
+        banner.style.backgroundAttachment = 'scroll';
       }
     }
   });
 </script>
+
+
+	
 </body>
 </html>
