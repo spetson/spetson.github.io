@@ -5,3 +5,32 @@
     display: none !important;
   }
 }
+
+
+@media only screen and (max-width: 768px) {
+  .main-banner {
+    height: auto !important;
+    min-height: 350px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 100px !important; /* espaço pro menu fixo */
+    padding-bottom: 40px;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .main-banner .heading {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .main-banner h1 {
+    font-size: 28px !important;
+    margin-bottom: 10px;
+  }
+
+  .main-banner h3 {
+    font-size: 18px !important;
+  }
+}
