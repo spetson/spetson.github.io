@@ -1,12 +1,3 @@
-
-/** ADD YOUR AWESOME CODES HERE **/
-@media only screen and (max-width: 768px) {
-  .mob-hide {
-    display: none !important;
-  }
-}
-
-
 @media only screen and (max-width: 768px) {
   .main-banner {
     height: auto !important;
