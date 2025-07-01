@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<div id="about" class="section wb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="message-box">                        
+                        <h2>Sobre Mim</h2>
+                        <p> Eu sou um brasileiro vivendo no Japão.<br>
+                          Cheguei aqui em 1992, tive um breve retorno ao Brasil entre 1993~1995 e então retornei ao Japão onde estou até hoje.<br>
+                          Eu sou um jogador Casual, das antigas. <br>
+                        </p>
+
+                        <a href="#" class="sim-btn btn-hover-new" hx-get="about.html" hx-target="#conteudo" hx-push-url="true"><span>Saiba mais sobre Mim</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+                <div class="col-md-6">
+                    <div class="right-box-pro wow fadeIn">
+                        <img src="uploads/about_04.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+    <div id="services" class="section lb">
+        <div class="container">
+            <div class="section-title text-left">
+                <h3>Setup</h3>
+                <p>Eu tenho um Setup bem simples usando equipamentos básicos instalados na sala de minha casa onde eu costumo passar algum tempo casual jogando com os amigos. Use os links abaixo para se conectar comigo!</p>
+            </div><!-- end title -->
+
+            <div class="row">
+				<div class="col-md-4">			
+				 <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-discuss-issue"></i>
+						</div>
+					 <h2>Conecte-se</h2>
+					 PSN ID spetsonbr<br>
+					 TWITCH <a href="https://www.twitch.tv/spetsonbr" target="_blank">spetsonbr</a><br>
+					 DISCORD <a href="https://discord.gg/8DMN7pHDpg" target="_blank">spetsonbr</a><br>
+					 VOICE CHAT <a href="https://discord.gg/WPQeyxV7vR" target="_blank">Discord VC</a><br>
+					 INSTAGRAM <a href="https://instagram.com/spetsonjp" target="_blank">@spetsonjp</a>
+				</div>
+                </div><!-- end col -->
+				
+                <div class="col-md-4">                
+                  <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-idea-1"></i>
+						</div>
+						<h2>Buy Me a Cofee</h2>
+						<p>Aqui você pode me apoiar pagando um cafézinho com sua doação.<br>
+						  <a href="https://tipa.ai/20matar" target="_blank">Tipa.ai</a> -&gt; Fazer sua doação via <strong>Pix</strong> se você está no Brasil<br>
+						  <a href="https://20matar.online/paypal/">Paypal</a> -&gt; Doar 1$ via Paypal
+                        se você estiver pelo mundão a fora.</p>
+					</div>
+				</div><!-- end col -->
+				
+				<div class="col-md-4">
+                    <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-process"></i>
+						</div>
+					  <h2>Equipamentos</h2>
+						<p><strong>Ps4 Capture:</strong> Elgato HD60 Pro<br>
+						  <strong>Facecam:</strong> Elgato HD60S<br>
+						  <strong>Áudio:</strong> Cubilux Toslink DAC<br>
+						  <strong>Interface:</strong> BOMGE BMG22<br>
+						  <strong>Headset:</strong> HyperX Cloud II Core <br>
+                      </p>
+					</div>
+                </div><!-- end col -->
+				
+				<div class="col-md-4">		
+				  <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-seo"></i>
+						</div>
+						<h2>Display &amp; Cams</h2>
+						<p>KTC H24S17<br>
+						Panasonic Viera TH49EX850<br>
+					    EMeet C960•Nikon D5200<br>
+					    <strong>Games:</strong> Playstation 4•PC						<br>
+					    <strong>Mob:</strong> Iphone 16 Pro						</p>
+					</div>
+
+                </div><!-- end col -->
+				<div class="col-md-4">
+                    <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-idea"></i>
+						</div>
+						<h2>Share your Thoughts</h2>
+						<p>Você tem idéias ou sugestões de jogos ou Gameplay?<br>
+						  Deixe seu comentário, envie seu feedback ou simplesmente se conecte para bater um papo ou jogar 1x1<br>
+						  Adicione-me na PSN! spetsonbr</p>
+					</div>
+                </div><!-- end col -->
+				<div class="col-md-4">
+				    <div class="services-inner-box">
+						<div class="ser-icon">
+							<i class="flaticon-development"></i>
+						</div>
+						<h2>Lounge</h2>
+						<p>Além de jogos casuais online, eu também sou um amante da Natureza e fã incondicional de todas as pequenas ilhas ao redor de Okinawa. Se você também gosta de Snorkel e Mergulho, me siga lá no Insta.</p>
+					</div>
+                  
+					
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+
+	
+	<div id="blog" class="section lb">
+		<div class="container">
+			<div class="section-title text-left">
+                <h3>Blog</h3>
+                <p>Minhas últimas postagens no Medium</p>
+            </div><!-- end title -->
+			
+			<div class="row">
+			<div id="medium-posts" class="col-md-4 col-sm-6 col-lg-4"></div>
+<script>
+  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@spetson")
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById("medium-posts");
+      data.items.slice(0, 5).forEach(post => {
+        // usar DOMParser para pegar imagem com segurança
+        let imageUrl = null;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.description, 'text/html');
+        const imgTag = doc.querySelector('img');
+        if (imgTag) {
+          imageUrl = imgTag.src;
+        }
+
+        const div = document.createElement("div");
+        div.style = "margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px;";
+        div.innerHTML = `
+          <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
+          <p><em>${new Date(post.pubDate).toLocaleDateString()}</em></p>
+          ${imageUrl ? `<img src="${imageUrl}" alt="Imagem do post" style="max-width:100%;height:auto;display:block;">` : ""}
+          <p>${post.description.replace(/<[^>]+>/g, '').substring(0, 200)}...</p>
+          <a href="${post.link}" target="_blank">Leia no Medium →</a>
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao carregar feed do Medium:", error);
+      document.getElementById("medium-posts").innerText = "Erro ao carregar posts do Medium.";
+    });
+</script>
+
+
+				</div>
+        </div><!-- end container -->
+    </div><!-- end section -->
+ 
