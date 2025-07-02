@@ -56,19 +56,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger active" href="#" hx-get="home.html" hx-target="#conteudo" hx-push-url="true" >Home</a>
+              <a class="nav-link js-scroll-trigger active" href="#conteudo" hx-get="home.html" hx-target="#conteudo" hx-push-url="true" >Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" hx-get="about.html" hx-target="#conteudo" hx-push-url="true" >Sobre</a>
+              <a class="nav-link js-scroll-trigger" href="#conteudo" hx-get="about.html" hx-target="#conteudo" hx-push-url="true" >Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" hx-get="doar.html" hx-target="#conteudo" hx-push-url="true" >Doar</a>
+              <a class="nav-link js-scroll-trigger" href="#conteudo" hx-get="doar.html" hx-target="#conteudo" hx-push-url="true" >Doar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" hx-get="galeria.html" hx-target="#conteudo" hx-push-url="true" >Galeria</a>
+              <a class="nav-link js-scroll-trigger" href="#conteudo" hx-get="galeria.html" hx-target="#conteudo" hx-push-url="true" >Galeria</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" hx-get="downloads.html" hx-target="#conteudo" hx-push-url="true" >Downloads</a>
+              <a class="nav-link js-scroll-trigger" href="#conteudo" hx-get="downloads.html" hx-target="#conteudo" hx-push-url="true" >Downloads</a>
             </li>
           </ul>
         </div>
@@ -152,5 +152,20 @@
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
     <script src="js/jquery.vide.js"></script>
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 768) {
+      const banner = document.querySelector('.main-banner');
+      if (banner && banner.classList.contains('parallaxie')) {
+        banner.classList.remove('parallaxie');
+        banner.style.height = 'auto';
+        banner.style.minHeight = '350px';
+        banner.style.paddingTop = '100px';
+        banner.style.paddingBottom = '40px';
+        banner.style.backgroundAttachment = 'scroll';
+      }
+    }
+  });
+</script>
 </body>
 </html>
