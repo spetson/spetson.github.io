@@ -25,3 +25,24 @@
     font-size: 18px !important;
   }
 }
+
+.container-flashback {
+    display: flex;        
+    align-items: center;    
+    justify-content: center;
+    gap: 10px;             
+    padding: 15px;       
+}
+
+.container-flashback .rtl{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  display: inline-block;
+}
+
+.icone-flashback {
+    width: 31px;         
+    height: 20px;  
+    display: block; 
+    object-fit: contain;
+}
