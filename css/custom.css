@@ -32,15 +32,20 @@
   }
 }
 
-.container-flashback {
-
+.container-flashback {     
+    align-items: center;    
+    justify-content: center;
+    gap: 10px;             
+    padding: 15px;   
 }
 
 .container-flashback .rtl{
-  direction: rtl;
-  unicode-bidi: bidi-override;
+   direction: rtl;
+   unicode-bidi: bidi-override;
 }
-
+.texto-flashback{
+  padding-left: 5px;
+}
 .icone-flashback {
     width: 31px;         
     height: 20px;  
