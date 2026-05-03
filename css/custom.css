@@ -32,6 +32,10 @@
   }
 }
 
+.block-item{
+  padding: 10px;
+  display: block;
+}
 .container-flashback {     
     align-items: center;    
     justify-content: center;
