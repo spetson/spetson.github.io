@@ -43,12 +43,9 @@
 .container-flashback .rtl{
   direction: rtl;
   unicode-bidi: bidi-override;
-
 }
 
 .icone-flashback {
     width: 31px;         
     height: 20px;  
-    display: block; 
-    object-fit: contain;
 }
