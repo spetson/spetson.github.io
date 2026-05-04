@@ -1,0 +1,68 @@
+---
+---
+{% include header.html %}
+<!-- Navigation -->  
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #333333">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="https://flashcast.com.br">
+			<img class="img-fluid" src="images/logo.png" alt="" />
+		</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="https://flashcast.com.br">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="episodes.html">Episódios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger active" href="apoie.html">Apoiar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="galeria.html">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="contato.html">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav><!-- end navigation -->
+	<!-- CONTENT -->
+<div id="blog" class="section lb" style="padding-top:80px">
+		<div class="container">
+			<div class="section-title text-left">
+                <h3>Últimos Episódios</h3>
+                <p>Estas são as últimas postagens no MixCloud<br>
+                  Você pode também baixar o aplicativo na loja do seu dispositivo e nos seguir para mais atualizações.<br>
+                  <ul id="mixcloud-list"></ul>
+                </p>
+      </div><!-- end title -->			
+    </div><!-- end container -->
+    </div><!-- end section -->
+<script>
+const url = 'https://api.mixcloud.com/flash-cast/cloudcasts/';
+fetch(url)
+.then(function(response) {
+    return response.json();
+})
+.then(function(data) {
+    var list = document.getElementById('mixcloud-list');
+    data.data.forEach(function(show) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = show.url;
+        a.textContent = show.name;
+        li.appendChild(a);
+        list.appendChild(li);
+    });
+})
+.catch(function(error) {
+    console.error('Erro ao buscar os episodios:', error);
+});
+</script>
+{% include footer.html %}
