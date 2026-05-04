@@ -33,8 +33,10 @@
 }
 
 .block-item{
-  padding: 10px;
-  display: block;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container-flashback {     
     align-items: center;    
