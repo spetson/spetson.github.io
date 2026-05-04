@@ -37,7 +37,7 @@
   padding-bottom: 6px;
 }
 
-.container-flashback {     
+.container-connect {     
     align-items: center;    
     justify-content: center;
     gap: 10px;             
@@ -46,15 +46,20 @@
     text-overflow: ellipsis;
 }
 
-.container-flashback .rtl{
+.container-connect .con-link{
+  display:block;
+}
+
+.container-connect .rtl{
    direction: rtl;
    unicode-bidi: bidi-override;
 }
 
-.container-flashback i{
+.container-connect i{
   display: inline;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 8px;
 }
-.icone-flashback {
-    width: 31px;         
-    height: 20px;  
-}
+
+
