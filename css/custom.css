@@ -36,6 +36,7 @@
   padding-top: 6px;
   padding-bottom: 6px;
 }
+
 .container-flashback {     
     align-items: center;    
     justify-content: center;
@@ -47,10 +48,12 @@
    direction: rtl;
    unicode-bidi: bidi-override;
 }
-.texto-flashback{
+
+.container-flashback .texto-flashback{
   padding-left: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline;
 }
 .icone-flashback {
     width: 31px;         
