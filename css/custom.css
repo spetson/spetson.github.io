@@ -51,8 +51,7 @@
    unicode-bidi: bidi-override;
 }
 
-.container-flashback li{
-  padding-left: 5px;
+.container-flashback i{
   display: inline;
 }
 .icone-flashback {
