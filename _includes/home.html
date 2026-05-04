@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <h2>Sobre Nós</h2>
+                        <h2>Sobre</h2>
                         <p>O FlashCast nasceu da paixão por comunicar e da vontade de te levar de volta no tempo.<br> 
 							Somos o seu teletransporte musical, resgatando aqueles flashbacks que ficaram guardados na memória e que têm o poder de te levar direto para um momento especial da sua vida.<br>
 							Aqui, a música esquecida ganha voz e a nostalgia bate forte, sempre com alto-astral e o ritmo que marcou gerações.<br> 
@@ -99,7 +99,7 @@
     <div id="services" class="section lb">
         <div class="container">
             <div class="section-title text-left">
-                <h3>O que tocamos aqui</h3>
+                <h3>Programção</h3>
                 <p>O Flash Cast tem como missão trazer músicas clássicas, e também aquelas que não tocam em programas de flashback por não serem consideradas "velhas",<br>
 					mas também não tocam em programação normal por não serem "novas".<br>
 					Existe muita coisa boa perdida nesse limbo, e o Flash Cast tenta recuperar isso.</p>
@@ -187,66 +187,16 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
-	 <div id="testimonials" class="section wb">
-        <div class="container">
-            <div class="section-title text-left">
-				<h3>Galeria</h3>
-				<p>Visite a Galeria para fotos do meu setup, screenshots e Últimos Vídeos</p>
-                <h3>Projetos</h3>
-                <p>🕹️Eu tenho alguns projetos sobre adicionar alguns jogos e consoles retrôs no meu setup (n64 etc)<br>Sugestões são sempre bem vindas.🫡</p>
-            </div><!-- end title -->
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-		Ex testi
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>MIX CLOUD</h3>
-                <p>Últimas postagens no Mix Cloud</p>
-            </div><!-- end title -->			
+                <h3></h3>
+                <p></p>
+            </div>
+			<!-- end title -->			
 		<div class="row">
-			<div id="medium-posts" class="col-md-4 col-sm-6 col-lg-4"></div>
-<script>
-  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@spetson")
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById("medium-posts");
-      data.items.slice(0, 5).forEach(post => {
-        // usar DOMParser para pegar imagem com segurança
-        let imageUrl = null;
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(post.description, 'text/html');
-        const imgTag = doc.querySelector('img');
-        if (imgTag) {
-          imageUrl = imgTag.src;
-        }
-
-        const div = document.createElement("div");
-        div.style = "margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px;";
-        div.innerHTML = `
-          <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
-          <p><em>${new Date(post.pubDate).toLocaleDateString()}</em></p>
-          ${imageUrl ? `<img src="${imageUrl}" alt="Imagem do post" style="max-width:100%;height:auto;display:block;">` : ""}
-          <p>${post.description.replace(/<[^>]+>/g, '').substring(0, 200)}...</p>
-          <a href="${post.link}" target="_blank">Leia no Medium →</a>
-        `;
-        container.appendChild(div);
-      });
-    })
-    .catch(error => {
-      console.error("Erro ao carregar feed do Medium:", error);
-      document.getElementById("medium-posts").innerText = "Erro ao carregar posts do Medium.";
-    });
-</script>
-
-
-	</div><!-- end row -->
+			<div id="posts" class="col-md-4 col-sm-6 col-lg-4"></div>
+		</div><!-- end row -->
     </div><!-- end container -->
     </div><!-- end section -->
 
