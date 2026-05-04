@@ -38,16 +38,16 @@
 }
 
 .container-connect {     
-    align-items: center;    
-    justify-content: center;
-    gap: 10px;             
-    padding: 5px;
+    align-items: center;             
+    padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .container-connect .con-link{
   display:block;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .container-connect .rtl{
@@ -57,9 +57,7 @@
 
 .container-connect i{
   display: inline;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-right: 8px;
+  padding-right: 2px;
 }
 
 
