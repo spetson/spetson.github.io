@@ -41,7 +41,9 @@
     align-items: center;    
     justify-content: center;
     gap: 10px;             
-    padding: 15px;   
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container-flashback .rtl{
@@ -51,8 +53,6 @@
 
 .container-flashback .texto-flashback{
   padding-left: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: inline;
 }
 .icone-flashback {
