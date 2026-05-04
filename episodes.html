@@ -37,32 +37,76 @@
 		<div class="container">
 			<div class="section-title text-left">
                 <h3>Últimos Episódios</h3>
-                <p>Estas são as últimas postagens no MixCloud<br>
-                  Você pode também baixar o aplicativo na loja do seu dispositivo e nos seguir para mais atualizações.<br>
+                <p><strong>Ouça</strong><br>
+                  Baixe o aplicativo MixCloud na loja de seu dispositivo e <a href="https://mixcloud.com/flash-cast" target="_blank">siga-nos</a> para acompanhar todos os episódios ao vivo<br>
                   <ul id="mixcloud-list"></ul>
-                </p>
+			</p>
+				<p><strong>Download</strong><br>
+				Baixe os últimos episódios em mp3 320kbps para ouvir a qualquer hora em qualquer lugar<br>
+				<ul id="archive-list"></ul>
+			</p>
       </div><!-- end title -->			
     </div><!-- end container -->
     </div><!-- end section -->
 <script>
-const url = 'https://api.mixcloud.com/flash-cast/cloudcasts/';
-fetch(url)
+const urlMixcloud = 'https://api.mixcloud.com/flash-cast/cloudcasts/';
+const urlArchive = "https://archive.org/advancedsearch.php?q=uploader:flashcast&fl[]=identifier&fl[]=title&rows=10&output=json";
+
+// Busca Mixcloud
+fetch(urlMixcloud)
 .then(function(response) {
     return response.json();
 })
 .then(function(data) {
     var list = document.getElementById('mixcloud-list');
-    data.data.forEach(function(show) {
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = show.url;
-        a.textContent = show.name;
-        li.appendChild(a);
-        list.appendChild(li);
-    });
+    if (data && data.data) {
+        data.data.forEach(function(show) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = show.url;
+            a.textContent = show.name;
+            li.appendChild(a);
+            list.appendChild(li);
+        });
+    }
 })
 .catch(function(error) {
-    console.error('Erro ao buscar os episodios:', error);
+    console.error('Erro ao buscar os episodios do Mixcloud:', error);
+});
+
+// Busca Internet Archive
+const statusDiv = document.getElementById("status");
+
+fetch(urlArchive)
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Erro na requisição: " + response.status);
+    }
+    return response.json();
+})
+.then(data => {
+    statusDiv.innerHTML = "";
+    const list = document.getElementById("archive-list");
+    const docs = data.response ? data.response.docs : null;
+
+    if (docs && docs.length > 0) {
+        docs.forEach(item => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+
+            a.href = "https://archive.org/details/" + item.identifier;
+            a.textContent = item.title || item.identifier;
+
+            li.appendChild(a);
+            list.appendChild(li);
+        });
+    } else {
+        statusDiv.innerHTML = "Nenhum upload encontrado ou usuário inválido.";
+    }
+})
+.catch(error => {
+    statusDiv.innerHTML = "Erro ao buscar dados.";
+    console.error("Erro ao buscar dados:", error);
 });
 </script>
 {% include footer.html %}
