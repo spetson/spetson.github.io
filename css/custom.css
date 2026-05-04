@@ -37,9 +37,9 @@
   padding-bottom: 6px;
 }
 
-.container-connect {     
-    align-items: center;             
-    padding: 10px;
+.container-connect {                 
+    padding-top: 14px;
+    padding-bottom: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
