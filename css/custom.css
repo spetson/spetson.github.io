@@ -14,7 +14,11 @@
   @media (max-width: 768px) {
     .hide-on-mobile {
         display: none !important;
-    }
+      }
+    .break-on-mobile {
+        display: block !important;
+      }
+    
 }
 
   .main-banner .heading {
