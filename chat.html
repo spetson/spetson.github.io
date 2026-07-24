@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chats Divididos - Twitch e Discord</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0e0e10;
+    }
+    .container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
+    iframe {
+      flex: 1;
+      height: 100%;
+      border: none;
+    }
+    /* Linha divisória fina entre os chats */
+    iframe:first-child {
+      border-right: 2px solid #202225;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Chat da Twitch -->
+    <!-- Substitua "SEU_CANAL" pelo nome do seu canal na Twitch -->
+    <!-- Substitua "localhost" pelo seu domínio ou mantenha se for rodar localmente -->
+    <iframe 
+      src="https://www.twitch.tv/embed/SEU_CANAL/chat?parent=localhost" 
+      title="Chat Twitch">
+    </iframe>
+
+    <!-- Chat do Discord -->
+    <!-- Cole aqui a URL gerada pelo WidgetBot ou serviço de embed do seu canal -->
+    <iframe 
+      src="https://e.widgetbot.io/channels/SEU_SERVER_ID/SEU_CHANNEL_ID" 
+      title="Chat Discord">
+    </iframe>
+  </div>
+
+</body>
+</html>
